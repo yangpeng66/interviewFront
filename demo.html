@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="smartorg.r6" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="smartorg.r6" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="smartorg.r6" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="smartorg.r6" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="smartorg.interviewChallenge" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="smartorg.interviewChallenge" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="smartorg.interviewChallenge" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="smartorg.interviewChallenge" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="bundle.css">
   <link rel="shortcut icon" href="images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app/views/login/login.css">
+  <link rel="stylesheet" href="app/views/main/main.css">
+
 
 </head>
 <body>
@@ -21,11 +25,15 @@
 
   <div ng-view class="fill-height"></div>
 
-  <script src="bundle.min.js"></script>
-  <!-- Tree -->
-  <!--<script src="widgets.min.js"></script>-->
-  <!-- Main workbench -->
 
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/views/login/login-controller.js"></script>
+  <script src="app/views/main/main-controller.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,9 @@
+{
+  "name": "interview",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "angular-route": "^1.6.9"
+  }
+}
