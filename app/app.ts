@@ -11,12 +11,23 @@ angular.module('smartorg.interviewChallenge', [
         templateUrl: '/interviewFront/app/views/main/main-template.html',
         controller: 'MainCtrl'
     }).otherwise({redirectTo: '/login'});
-}]).factory('callApiService', () => {
+}]).factory('callApiService', ['$http',($http) => {
     var emailAddress = "";
     return {
         login: function (email: string, successCallback, errorCallback) {
             emailAddress = email;
             successCallback({email: email});
+            $http({
+                method: 'POST',
+                url: 'http://127.0.0.1:5000/login',
+                data: {email: email}
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
         },
         submitAnswer: function (answer: any, successCallback, errorCallback) {
             successCallback({answer: answer});
@@ -25,4 +36,4 @@ angular.module('smartorg.interviewChallenge', [
             successCallback({challengeQuestion: "1+1"})
         }
     };
-});
+}]);
