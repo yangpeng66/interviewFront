@@ -12,11 +12,13 @@ angular.module('smartorg.interviewChallenge.main', [
                 if (response.data.question) {
                     console.log("success", response);
                     $scope.challengeQuestion = response.data.question;
+                    $scope.deadLine = response.data.deadLine;
+                    $scope.submitHistory = response.data.submitHistory;
                     $scope.submitted = false;
                     $timeout();
                 } else {
                     console.log("error:" + response.data.error )
-                    // alert(response.data.error)
+                    alert(response.data.error)
                 }
             }, function (response) {
                 console.log("error", response);

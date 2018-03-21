@@ -11,7 +11,7 @@
     </div>
     <br>
     <br>
-      <h3>Submit your answer</h3>
+      <h3>Submit your answer before {{deadLine}} PDT</h3>
       <div class="form-group">
         <div class="col-sm-12">
            <textarea style="height: 400px" class="form-control"
@@ -30,6 +30,14 @@
           <div ng-show="submitted">You have successfully submitted your answer,
             thank you!
           </div>
+        </div>
+
+        <br>
+        <h4 class="col-sm-12"> Submit History</h4>
+        <div class="col-sm-6" ng-repeat="a in submitHistory">
+          <ul class="list-group">
+            <li class="list-group-item">{{a}}</li>
+          </ul>
         </div>
       </div>
 

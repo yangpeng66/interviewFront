@@ -25,7 +25,7 @@ angular.module('smartorg.interviewChallenge.login', [
                 }
             }, function (response) {
                 console.log("error", response);
-                    //alert(response);
+                    alert(response);
             })
 
 
