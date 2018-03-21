@@ -11,29 +11,31 @@ angular.module('smartorg.interviewChallenge', [
         templateUrl: '/interviewFront/app/views/main/main-template.html',
         controller: 'MainCtrl'
     }).otherwise({redirectTo: '/login'});
-}]).factory('callApiService', ['$http',($http) => {
+}]).factory('callApiService', ['$http', ($http) => {
+    var endPoint = "http://127.0.0.1:5000";
     var emailAddress = "";
     return {
         login: function (email: string, successCallback, errorCallback) {
             emailAddress = email;
-            successCallback({email: email});
             $http({
                 method: 'POST',
-                url: 'http://127.0.0.1:5000/login',
+                url: endPoint + '/login',
                 data: {email: email}
-            }).then(function successCallback(response) {
-                // this callback will be called asynchronously
-                // when the response is available
-            }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-            });
+            }).then(successCallback, errorCallback);
         },
-        submitAnswer: function (answer: any, successCallback, errorCallback) {
-            successCallback({answer: answer});
+        submitAnswer: function (emailanswer: any, successCallback, errorCallback) {
+            $http({
+                method: 'POST',
+                url: endPoint + '/submit-answer',
+                data: {email: emailAddress, answer: emailanswer}
+            }).then(successCallback, errorCallback);
         },
         getChallengeQuestion: function (successCallback, errorCallback) {
-            successCallback({challengeQuestion: "1+1"})
+            $http({
+                method: 'POST',
+                url: endPoint + '/get-challenge',
+                data: {email: emailAddress}
+            }).then(successCallback, errorCallback);
         }
     };
 }]);

@@ -1,11 +1,38 @@
-<div>
-    <h2>Challenge</h2>
-    <div>{{challengeQuestion}}</div>
-</div>
+<div class="login-container">
+  <div class="login">
+    <div class="login-logo">
+      <img width="40%" src="app/images/favicon-96x96.png"/>
+    </div>
+  </div>
+  <div class="login-content">
+    <div>
+      <h3>Challenge Question:</h3>
+      <div>{{challengeQuestion}}</div>
+    </div>
+    <br>
+    <br>
+      <h3>Submit your answer</h3>
+      <div class="form-group">
+        <div class="col-sm-12">
+           <textarea style="height: 400px" class="form-control"
+                     placeholder="submit your answer here"
+                     ng-model="answer"></textarea>
+        </div>
+        <br>
+        <div class="col-sm-12 text-center">
+          <button class="btn btn-primary text-center" ng-click="submitAnswer(answer)"
+                  ng-if="!submitted">Submit
+          </button>
+        </div>
 
-<div>
-    <h2>Submit your answer</h2>
-    <textarea class="form-control"
-              placeholder="submit your answer here"></textarea>
-    <button class="btn btn-primary">Submit</button>
+        <br>
+        <div class="col-sm-12">
+          <div ng-show="submitted">You have successfully submitted your answer,
+            thank you!
+          </div>
+        </div>
+      </div>
+
+
+  </div>
 </div>

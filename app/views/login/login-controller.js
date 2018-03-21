@@ -15,9 +15,16 @@ angular.module('smartorg.interviewChallenge.login', [
             console.log("submit" + email);
             callApiService.login(email, function (response) {
                 console.log("success", response);
-                $location.path('/main');
+                var data = response.data;
+                if (data.canProceed == true) {
+                    $location.path('/main');
+                }
+                else {
+                    alert(response.data.message);
+                }
             }, function (response) {
                 console.log("error", response);
+                alert(response);
             });
         };
     }

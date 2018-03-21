@@ -7,14 +7,36 @@ angular.module('smartorg.interviewChallenge.main', [
     '$scope', '$location', 'callApiService', '$timeout', function ($scope, $location, callApiService, $timeout) {
         var getChallengeQuestion = function () {
             callApiService.getChallengeQuestion(function (response) {
-                console.log("success", response);
-                $scope.challengeQuestion = response.challengeQuestion;
+                if (response.data.qestion) {
+                    console.log("success", response);
+                    $scope.challengeQuestion = response.data.question;
+                    $scope.submitted = false;
+                    $timeout();
+                }
+                else {
+                    alert(response.data.error);
+                }
+            }, function (response) {
+                console.log("error", response);
+                alert(response);
+            });
+        };
+        $scope.submitAnswer = function (answer) {
+            callApiService.submitAnswer(answer, function (response) {
+                if (response.data.success) {
+                    console.log("success", response);
+                    $scope.submitted = true;
+                    $timeout(function () {
+                        $location.path('/login');
+                    }, 5000);
+                }
+                else {
+                    alert(response.data.error);
+                }
             }, function (response) {
                 console.log("error", response);
             });
         };
-        $scope.submitAnswer = function () {
-        };
-        $timeout(getChallengeQuestion());
+        $timeout(getChallengeQuestion);
     }
 ]);

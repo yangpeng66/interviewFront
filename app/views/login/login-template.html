@@ -1,13 +1,57 @@
-<div>
-    <h1>Instruction</h1>
-</div>
+<div class="login-container">
+  <div class="login">
+    <div class="login-logo">
+      <img width="90%" src="app/images/smartorg_logo_transparent.png"/>
+    </div>
+  </div>
+  <div class="login-content">
+    <div>
+      <h3>Instruction</h3>
+      <div class="col-sm-12">
+        <p>This challenge is open for a week <b>( March 22nd 00:00 PDT to March
+          29th
+          00:00
+          PDT )</b>. However, once you start the challenge, you will only have
+          <b>24 hours</b>
+          to
+          complete it. E.g. If you start this challenge on March 23rd 8:00am,
+          you
+          will
+          have until March 24th 8:00am to complete the challenge. A late
+          submission
+          will be considered as invalid entry. Please plan your time
+          accordingly.
+          You
+          can submit your answers at most five times within the 24 hours’
+          window.</p>
 
 
-<div>
-    <h2>Please enter your email to continue</h2>
-    <input class="form-control" type="email"
-           placeholder="enter your email here"
-           ng-model="emailAddress">
-    <button class="btn btn-primary" ng-click="submitEmail(emailAddress)">Enter
-    </button>
+        <p>If you are ready to start, please enter your email address and click
+          on
+          “Enter”. Your email needs to be on the invitation list to be qualified
+          for
+          this challenge. We hope you will enjoy this challenge!</p>
+      </div>
+
+    </div>
+
+    <div>
+      <h3>Please enter your email to continue</h3>
+      <div class="col-sm-12">
+        <div class="input-group">
+          <input size="100" class="form-control col-sm-8" style="width: 100px"
+                 type="email"
+                 placeholder="enter your email here"
+                 ng-model="emailAddress">
+          <span class="input-group-btn col-sm-4">
+           <button class="btn btn-primary" ng-click="submitEmail(emailAddress)">
+          Enter
+        </button>
+        </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
+
